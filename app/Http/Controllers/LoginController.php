@@ -32,10 +32,12 @@ class LoginController extends Controller{
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'username' => 'required|min:5|max:255|unique:users',
+            'contact' => 'required|min:10|max:13',
             'email' => 'required|email:dns|unique:users',
             'password' => 'required|min:5|max:255'
         ]);
         $validatedData['role'] = 'user';
+        $validatedData['status'] = 1;
         // dd($validatedData);
         User::create($validatedData);
         return redirect('/signin')->with('success', 'Registration successfull! Please login!');

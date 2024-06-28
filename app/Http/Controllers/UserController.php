@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Psy\Readline\Hoa\Console;
 
 class UserController extends Controller
 {
@@ -80,9 +81,8 @@ class UserController extends Controller
         $DataUser['contact'] = $request->contact;
         $DataUser['role'] = $request->role;
         $DataUser['updated_at'] = date('Y-m-d H:i:s');
-        if($request->has('status')){
-            $DataUser['status'] = $request->status == 'on' ? 1 : 0;
-        }
+        $DataUser['status'] = $request->status == 'on' ? 1 : 0;
+        
         if($request->password != null or $request->password != ''){
             $DataUser['password'] = bcrypt($request->password);
         }

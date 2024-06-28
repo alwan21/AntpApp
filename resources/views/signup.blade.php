@@ -60,6 +60,13 @@
                       @enderror
                     </div>
                     <div class="mb-3">
+                      <input type="number" id="contact" name="contact" class="form-control form-control-lg @error('contact') is-invalid @enderror" 
+                      value="{{ old('contact') }}" placeholder="Contact" aria-label="contact">
+                      @error('contact')
+                      <div class="invalid-feedback">{{ $message }}</div>                      
+                      @enderror
+                    </div>
+                    <div class="mb-3">
                       <input type="email" id="email" name="email" class="form-control form-control-lg @error('email') is-invalid @enderror" 
                       value="{{ old('email') }}" placeholder="Email" aria-label="Email">
                       @error('email')
