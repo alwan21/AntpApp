@@ -164,6 +164,7 @@
                     {
                       data: 'id', 
                       name: 'aksi',
+                      searchable: false,
                       render: function(data) {
                         return '<button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" id="BtnEditBarang" data-bs-target="#EditBarang" data-id=' + data + '><i class="fa fa-edit fa-1x"></i></button>'+
                         ' <button type="button" class="btn btn-primary btn-sm" id="DetailBarang" data-id=' + data + '><i class="fa fa-eye fa-1x"></i></button>' + 
